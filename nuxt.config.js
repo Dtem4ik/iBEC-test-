@@ -4,6 +4,9 @@ export default {
   /*
   ** Headers of the page
   */
+  server: {
+    host: '0.0.0.0'
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -23,6 +26,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -40,11 +44,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/style-resources',
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
+  styleResources: {
+    scss: [
+      '@/assets/scss/main.scss'
+    ]
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

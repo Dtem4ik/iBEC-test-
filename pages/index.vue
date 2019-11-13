@@ -1,72 +1,102 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        iBecTest
-      </h1>
-      <h2 class="subtitle">
-        test
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="index">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 col-12">
+          <div class="row">
+            <div v-for="i in 8" :key="`card-${i}`" class="col-xl-6 col-12">
+              <div class="index__card rounded">
+                <div class="index__card-zakladka d-flex align-items-center justify-content-center">
+                  <img src="/img/Suitcase.png" alt="">
+                </div>
+                <div class="index__card__header">
+                  Мои счета
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-12 d-flex flex-column">
+          <div class="index__item rounded">
+            <div class="index__item-header d-flex align-items-center justify-content-center">
+              Курс обмена валют:
+            </div>
+          </div>
+          <div class="index__item d-flex flex-column rounded">
+            <div class="index__item-img"><img class="rounded-top" src="/img/auto.png" alt=""></div>
+            <button class="index__item-button rounded-bottom">Кредит Auto</button>
+          </div>
+          <div class="index__item d-flex flex-column rounded">
+            <div class="index__item-img"><img class="rounded-top" src="/img/deposit.png" alt=""></div>
+            <button class="index__item-button rounded-bottom">Депозиты</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
+<style lang="scss">
+.index{
+  padding: 20px 0;
+  &__card{
+    min-height: 370px;
+    background: #eaeaea;
+    border: 1px solid white;
+    position: relative;
+    margin-bottom: 30px;
+    &-zakladka{
+      position: absolute;
+      left: 10px;
+      top: -3px;
+      background: url(/img/zakladka.png) no-repeat;
+      width: 28px;
+      height: 60px;
+    }
+    &__header{
+      font-size: 24px;
+      color: $red;
+      padding: 5px 10px 15px 50px;
+      & hr {
+        margin: 0;
+        display: block;
+        background: $red;
+      }
+    }
   }
-}
-</script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  &__item{
+    min-height: 170px;
+    background: #eaeaea;
+    border: 1px solid white;
+    position: relative;
+    margin-bottom: 15px;
+    &:hover{
+      cursor: pointer;
+    }
+    &-header{
+      padding: 10px;
+      color: $color;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    &-img{
+      height: 175px;
+      & img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &-button{
+      text-align: left;
+      border: 0;
+      background: $red;
+      height: 100%;
+      padding: 10px 15px;
+      font-weight: bold;
+      font-size: 12px;
+      color: white;
+    }
+  }
 }
 </style>
