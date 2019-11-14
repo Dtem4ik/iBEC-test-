@@ -24,10 +24,12 @@
             </div>
           </div>
           <div class="index__item d-flex flex-column rounded">
+            <div class="index__item-shadow" />
             <div class="index__item-img"><img class="rounded-top" src="/img/auto.png" alt=""></div>
             <button class="index__item-button rounded-bottom">Кредит Auto</button>
           </div>
           <div class="index__item d-flex flex-column rounded">
+            <div class="index__item-shadow" />
             <div class="index__item-img"><img class="rounded-top" src="/img/deposit.png" alt=""></div>
             <button class="index__item-button rounded-bottom">Депозиты</button>
           </div>
@@ -70,8 +72,21 @@
     border: 1px solid white;
     position: relative;
     margin-bottom: 15px;
+    &-shadow{
+      z-index: 100;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 79px solid transparent;
+      transition: .3s;
+    }
     &:hover{
       cursor: pointer;
+    }
+    &:hover &-shadow{
+      border-left: 79px solid rgba($color: #fff, $alpha: .15);
+      border-top: 79px solid rgba($color: #fff, $alpha: .15);
     }
     &-header{
       padding: 10px;
@@ -80,6 +95,7 @@
       font-weight: bold;
     }
     &-img{
+      z-index: 2;
       height: 175px;
       & img{
         object-fit: cover;

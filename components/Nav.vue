@@ -61,7 +61,7 @@ export default {
         height: 60%;
         width: 2px;
         background: #a7a7a7;
-        border-radius: 80%;
+        border-radius: 100%;
       }
       &:last-child{
         border: 0;
