@@ -10,9 +10,11 @@
           <ul class="nav__menu rounded">
             <li>
               <nuxt-link to="/">Главная</nuxt-link>
+              <span />
             </li>
             <li>
               <nuxt-link to="/about">О нас</nuxt-link>
+              <span />
             </li>
             <li>
               <nuxt-link to="/contact">Контакты</nuxt-link>
@@ -50,7 +52,17 @@ export default {
       transition: .1s;
       display: flex;
       position: relative;
-      border-right: 1px solid #a7a7a7;
+      // border-right: 1px solid #a7a7a7;
+      & span{
+        align-self: center;
+        position: absolute;
+        right: 0;
+        display: flex;
+        height: 60%;
+        width: 2px;
+        background: #a7a7a7;
+        border-radius: 80%;
+      }
       &:last-child{
         border: 0;
       }
